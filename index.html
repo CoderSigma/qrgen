@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QR Code Generator</title>
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    justify-content: space-evenly;
+    font-family: 'Muli',sans-serif;
+  background: linear-gradient(#e91e63,#1196f3);
+;
+
+    position: relative;
+}
+
+body h2{
+    position: absolute;
+    top:3rem;
+    text-align: center;
+    padding: 0 2rem;
+    word-spacing: 4px;
+}
+
+.container{
+    width: 320px;
+    height: 380px;
+    max-width: 800px;
+    margin: auto;
+   background-color: #ffb923;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 17px;
+    
+}
+
+    
+ 
+input[type="text"] {
+  width: 270px;
+  height: 45px;
+  font-size: 18px;
+  padding: 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+input[type="text"]:focus {
+  border: 1px solid #555;
+  outline: none;
+}
+
+button{
+ box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 180px;
+  margin: 0 auto;
+  padding: 3%;
+  background: #2979ff;
+  border: none;
+  border-radius: 3px;
+  font-size: 17px;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  color: #fff;
+  cursor: pointer;
+}
+ button:hover {
+  background: rgba(0, 134, 191, 1);
+}
+  .contQr {
+    margin: auto;
+    width: 350px;
+    max-width: 100%;
+}
+
+.qrImage {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 4px;
+    width: 250px;
+    max-width: 100%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.qrImage img {
+    width:70%;
+}
+#button {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+a{
+ position:fixed;
+display:fixed ;
+  top:89%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background-color:red;
+width:200px;
+height:35px;
+text-align:center;
+  color:black;
+  font-weight:1000;
+  font-size:14vw;
+  font-size:20px;
+  padding-top:5px;
+  border-radius:5px;
+
+}
+#fb{
+position:fixed;
+display:fixed ;
+  top:95%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background-color:red;
+width:200px;
+height:35px;
+text-align:center;
+  color:black;
+  font-weight:1000;
+  font-size:14vw;
+  font-size:20px;
+  padding-top:5px;
+  border-radius:5px;
+}
+  </style>
+ 
+</head>
+<body>
+  
+  <div class="container">
+
+   <input type="text" id="text-input" placeholder="Enter text to convert to QR code"><br />
+ <div class="qr-code" id="qr-img"></div>
+   <button onclick="generateQRCode()">Generate QR Code</button>
+</div>
+<a id="fb" href="https://www.facebook.com/CoderSigs" target="_blank">Facebook Page</a><br>
+ <a href="https://github.com/CoderSigma" target="_blank"
+        >GitHub</a>
+<script>
+alert("test")
+    function generateQRCode() {
+      // Get the text from the input field
+      var text = document.getElementById("text-input").value;
+
+      // Check if the text is not empty
+      if (text) {
+        // Set the QR code content
+        var qrCodeContent = "https://chart.googleapis.com/chart?cht=qr&chl=" + text + "&chs=200x200&choe=UTF-8&chld=L|2";
+
+        // Set the QR code image source
+        document.getElementById("qr-img").innerHTML = "<img src='" + qrCodeContent + "'>";
+      }
+    }
+  </script>
+</body>
+</html>
