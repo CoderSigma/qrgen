@@ -1,4 +1,4 @@
-alert("Kalma ka lang, hindi hacking link to or what");
+
     function generateQRCode() {
       // Get the text from the input field
       var text = document.getElementById("text-input").value;
@@ -12,3 +12,4 @@ alert("Kalma ka lang, hindi hacking link to or what");
         document.getElementById("qr-img").innerHTML = "<img src='" + qrCodeContent + "'>";
       }
     }
+alert("Kalma ka lang, hindi hacking link to or what");
